@@ -1,0 +1,25 @@
+﻿@model IEnumerable< DiaryApplication.Models.DiaryPostEntity>
+<div class="topnav"></div>
+<label> Logo </label>
+<label> My Diaries </label>
+
+<label> Draft Saved Few Second Ago </label>
+
+
+<br />
+<input type="date" value=DateTime.Now />
+
+<textarea name="editor1"></textarea>
+
+
+
+      
+        @foreach (var item in Model)
+        {
+
+                    <img src="/@item.ImageUrl"  />
+         }
+   
+
+
+

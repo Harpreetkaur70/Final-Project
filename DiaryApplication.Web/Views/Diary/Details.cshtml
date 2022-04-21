@@ -1,0 +1,35 @@
+﻿@model DiaryApplication.Models.DiaryPostEntity
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="create" style="background-color:lightgray;padding:20px;">
+    <div class="grid-app">
+        <h4>DiaryPostEntity</h4>
+        <hr />
+        <dl class="row">
+
+            <dd class="col-sm-10">
+               <h3> @Html.DisplayFor(model => model.Title)</h3>
+            </dd>
+            <dd class="col-sm-10 date" >
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+            <dd class="col-sm-10">
+                <img src="@Model.ImageUrl" height="135px" width="135px" />
+            </dd>
+            <dd class="col-sm-10">
+                @Html.Raw(Model.Content)
+            </dd>
+
+
+
+
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

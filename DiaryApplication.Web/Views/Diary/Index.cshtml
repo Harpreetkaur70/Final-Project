@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DiaryApplication.Models.DiaryPostEntity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div id="create" style="background-color:lightgray;padding:20px;">
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <div class="grid-app">
+        @foreach (var item in Model)
+        {
+            <li>
+                <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                <span>@Html.DisplayFor(modelItem => item.CreatedDate)</span>
+                <div class="image-data">     <img src="@item.ImageUrl" height="50px" width="50px" /></div>
+                <p> @Html.Raw(item.Content)</p>
+                <div class="more ">
+
+                    <ul>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </ul>
+                </div>
+            </li>
+
+        }
+    </div>
+   
+                </div>
